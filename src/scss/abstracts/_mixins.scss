@@ -1,0 +1,81 @@
+$breakpoints: (
+  xLargeDesktop: 1400px,
+  largeDesktop: 1400px,
+  desktop: 1280px,
+  tablet: 1024px,
+  belowTablet: 768px,
+  mobile: 590px,
+  mobileLarge: 425px,
+  mobileMedium: 375px,
+  mobileSmall: 320px,
+);
+
+@mixin breakpoint($point) {
+  $breakpoint: map-get($breakpoints, $point);
+  @if $point== xLargeDesktop {
+    @media (min-width: $breakpoint) {
+      @content;
+    }
+  } @else {
+    @media (max-width: $breakpoint) {
+      @content;
+    }
+  }
+}
+
+@mixin item-center() {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+  -ms-flex-pack: center;
+  -ms-flex-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin articles-grid() {
+  display: grid;
+  height: 100vh;
+  grid-gap: 30px;
+  grid-template-columns: repeat(18, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+@mixin cards-grid() {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(3, 1fr);
+  & > .article-card {
+    height: 50vh;
+  }
+  @include breakpoint(largeDesktop) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include breakpoint(belowTablet) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@mixin content-grid() {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  grid-gap: 30px;
+
+  @include breakpoint(belowTablet) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@mixin flex-between() {
+  display: flex;
+  justify-content: space-between;
+  @include breakpoint(tablet) {
+    flex-direction: column;
+    .select {
+      width: 100%;
+      padding-bottom: 20px;
+    }
+  }
+}

@@ -1,0 +1,67 @@
+@import "../../scss/main";
+
+.top-stories {
+  &__header {
+    @include flex-between();
+  }
+}
+
+@mixin grid-item($colStart, $colSpan, $rowStart, $rowSpan, $color) {
+  grid-column: $colStart / span $colSpan;
+  grid-row: $rowStart / span $rowSpan;
+  border-color: $color;
+}
+
+@mixin hide-details() {
+  .article-card__trail {
+    display: none;
+  }
+}
+
+@mixin hide-image-and-details() {
+  @include hide-details;
+  & > .image {
+    display: none;
+  }
+}
+
+.news-card-container {
+  @include breakpoint(xLargeDesktop) {
+    @include articles-grid();
+    & > .article-card:nth-child(1) {
+      @include grid-item(1, 8, 1, 3, #388e3c);
+    }
+
+    & > .article-card:nth-child(2) {
+      @include grid-item(9, 5, 1, 2, #d32f2f);
+      @include hide-details;
+    }
+
+    & > .article-card:nth-child(3) {
+      @include grid-item(14, 5, 1, 2, #ffc107);
+      @include hide-details;
+    }
+
+    & > .article-card:nth-child(4) {
+      @include grid-item(9, 5, 3, 1, #2196f3);
+      @include hide-image-and-details();
+    }
+
+    & > .article-card:nth-child(5) {
+      @include grid-item(14, 5, 3, 1, #388e3c);
+      @include hide-image-and-details();
+    }
+
+    & > .article-card:nth-child(n + 6) {
+      grid-area: span 1 / span 6;
+      height: 50vh;
+    }
+  }
+  @include breakpoint(largeDesktop) {
+    @include cards-grid();
+  }
+}
+
+.card-container {
+  @include cards-grid();
+}

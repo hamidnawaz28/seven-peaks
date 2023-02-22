@@ -1,0 +1,15 @@
+@import "../../scss/main";
+
+.article-card {
+  text-decoration: none;
+  background-color: $primary-main;
+  color: $light;
+
+  border-bottom: 3px solid $error-main;
+  &:hover {
+    cursor: pointer;
+  }
+  &__content {
+    padding: 0px 10px;
+  }
+}

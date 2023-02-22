@@ -1,0 +1,13 @@
+@import "../../../scss/main";
+.grid {
+  padding: 10px calc(10% + 2vw);
+  @include breakpoint(largeDesktop) {
+    padding: 4.5% 6%;
+  }
+  @include breakpoint(desktop) {
+    padding: 5%;
+  }
+  @include breakpoint(tablet) {
+    padding: 5% 3.5%;
+  }
+}

@@ -1,0 +1,12 @@
+@import "../../scss/main";
+
+.image {
+  width: 100%;
+  height: 60%;
+  background-color: $primary-light;
+  @include item-center();
+
+  &__tag {
+    width: 15vh;
+  }
+}

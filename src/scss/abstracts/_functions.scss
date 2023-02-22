@@ -1,0 +1,5 @@
+@function getRelativeFontSize($fixedSize) {
+  $baseFontSize: 16px;
+  $relativeSize: calc($fixedSize / $baseFontSize);
+  @return $relativeSize * 1rem;
+}

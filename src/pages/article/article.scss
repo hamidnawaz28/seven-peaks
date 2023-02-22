@@ -1,0 +1,29 @@
+@import "../../scss/main";
+
+.article {
+  padding-top: 5%;
+
+  // Use a grid system for layout
+  @include content-grid();
+
+  &__media {
+    padding-top: 15vh;
+    flex-direction: column;
+    direction: ltr;
+    & .image {
+      height: 20rem;
+    }
+  }
+  &__content {
+    direction: ltr;
+  }
+  &__body {
+    & figure {
+      margin: 0px;
+      & img {
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+  }
+}

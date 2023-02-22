@@ -1,0 +1,6 @@
+@import "../../scss/main";
+
+.fallback {
+  height: 60vh;
+  @include item-center();
+}

@@ -1,0 +1,11 @@
+@import "../../scss/main";
+
+.filter {
+  &__header {
+    @include flex-between();
+  }
+}
+
+.filter_card_container {
+  @include cards-grid();
+}

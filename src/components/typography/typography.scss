@@ -1,0 +1,28 @@
+@import "../../scss/main";
+
+@mixin test-margin() {
+  margin: clamp(10px, 2vw, 0.5rem) 0px;
+}
+
+.text {
+  font-family: $font-family;
+  font-weight: $font-weight-regular;
+  font-size: $base-font-size;
+  @include test-margin();
+}
+
+.text-paragraph {
+  font-size: clamp($base-font-size, 2.5vw, 1rem);
+}
+
+.text-h1 {
+  font-weight: $font-weight-bold;
+  font-size: clamp($base-font-size, 4vw, 1.8rem);
+}
+.text-h2 {
+  font-size: clamp($base-font-size, 3vw, 1.3rem);
+}
+.text-h3 {
+  font-weight: $font-weight-bolder;
+  font-size: clamp($base-font-size, 2vw, 1rem);
+}

@@ -1,0 +1,41 @@
+@import "../../scss/main";
+input {
+  background-color: transparent;
+  border: none;
+  color: $light;
+  outline: none;
+  border-bottom: 2px solid $light;
+
+  &:focus {
+    &::placeholder {
+      color: rgba($color: $light, $alpha: 0.3);
+    }
+  }
+  &::placeholder {
+    color: $light;
+  }
+}
+
+.input {
+  @include wingle-input();
+  display: flex;
+  &:hover {
+    cursor: pointer;
+  }
+  &__focus {
+    background-color: rgba($color: $light, $alpha: 0.1);
+  }
+  &__label {
+    font-size: 12px;
+  }
+  &__icon {
+    padding: 10px;
+  }
+  &__field {
+    padding: 10px 25px;
+    width: -webkit-fill-available;
+    font-size: 14px;
+    border-radius: 0px;
+    border-bottom: 2px solid $light;
+  }
+}

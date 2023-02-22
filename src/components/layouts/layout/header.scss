@@ -1,0 +1,33 @@
+@import "../../../scss/main";
+
+.header {
+  background-color: $primary-main;
+  color: $light;
+  padding: 2vh calc(10% + 2vw) 0px calc(10% + 2vw);
+  @include breakpoint(largeDesktop) {
+    padding: 2vh 6% 0px 6%;
+  }
+  @include breakpoint(desktop) {
+    padding: 2vh 5% 0px 5%;
+  }
+  @include breakpoint(tablet) {
+    padding: 2vh 3.5% 0px 3.5%;
+  }
+  margin-bottom: 3vh;
+  &__logo {
+    color: $light;
+    @include flex-between();
+    align-items: center;
+    width: min-content;
+    & img {
+      height: 5vh;
+    }
+  }
+  &__search {
+    display: flex;
+    flex-direction: row-reverse;
+    @include breakpoint(tablet) {
+      padding-top: 10px;
+    }
+  }
+}
